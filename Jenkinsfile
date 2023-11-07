@@ -10,7 +10,11 @@ pipeline{
                 url:'https://github.com/vivektangudu123/calculator.git'
             }
         }
-
+        stage('Step 2: Maven Build'){
+            steps{
+                sh 'mvn clean install'
+            }
+        }
 
     }
 }
