@@ -15,6 +15,12 @@ pipeline{
                 sh 'mvn clean install'
             }
         }
-
+        stage('Step 3: Build Docker Image'){
+            steps {
+                script {
+                    docker_image = docker.build "bean6792/calculator:latest"
+                }
+            }
+        }
     }
 }
